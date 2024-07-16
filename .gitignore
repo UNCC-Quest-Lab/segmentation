@@ -1,5 +1,5 @@
 .DS_Store
-/detectron2-main/datasets/
+/detectron2-main/datasets/coco
 /detectron2-main/save/
 /detectron2-main/output/
 
