@@ -1,3 +1,8 @@
+.DS_Store
+/detectron2-main/datasets/
+/detectron2-main/save/
+/detectron2-main/output/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
