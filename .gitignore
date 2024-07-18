@@ -1,8 +1,8 @@
 .DS_Store
-/detectron2-main/datasets/coco
+/detectron2-main/datasets/coco/
 /detectron2-main/save/
 /detectron2-main/output/
-/detectron2-main/coco/dataset
+/detectron2-main/coco/dataset/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

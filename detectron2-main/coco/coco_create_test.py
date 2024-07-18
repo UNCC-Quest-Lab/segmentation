@@ -9,7 +9,8 @@ from PIL import Image
 import numpy as np
 from pycococreatortools import pycococreatortools
 
-ROOT_DIR = 'dataset/test'
+CUR_DIR = os.path.abspath(os.getcwd())
+ROOT_DIR = os.path.join(CUR_DIR,'dataset/test')
 IMAGE_DIR = os.path.join(ROOT_DIR, 'images')
 ANNOTATION_DIR = os.path.join(ROOT_DIR, 'annotations')
 
@@ -43,8 +44,8 @@ LICENSES = [
 CATEGORIES = [
     {
         'id': 1,
-        'name': 'class1',
-        'supercategory': 'class1',
+        'name': 'placenta',
+        'supercategory': 'organ',
     },
 ]
 
@@ -84,7 +85,7 @@ def main():
     for root, _, files in os.walk(IMAGE_DIR):
         image_files = filter_for_png(root, files)
         image_files.sort()
-        
+
         # go through each image
         for image_filename in image_files:
             image = Image.open(image_filename)
@@ -118,7 +119,7 @@ def main():
 
             image_id = image_id + 1
 
-    with open('{}/instances_test2017.json'.format(ROOT_DIR), 'w') as output_json_file:
+    with open('{}/instances_test2017.json'.format(ROOT_DIR), 'w+') as output_json_file:
         json.dump(coco_output, output_json_file)
 
 

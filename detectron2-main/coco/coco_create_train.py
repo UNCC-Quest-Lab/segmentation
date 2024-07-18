@@ -8,8 +8,8 @@ import fnmatch
 from PIL import Image
 import numpy as np
 from pycococreatortools import pycococreatortools
-
-ROOT_DIR = 'dataset/train'
+CUR_DIR = os.path.abspath(os.getcwd())
+ROOT_DIR = os.path.join(CUR_DIR,'dataset/train')
 IMAGE_DIR = os.path.join(ROOT_DIR, 'images')
 ANNOTATION_DIR = os.path.join(ROOT_DIR, 'annotations')
 
@@ -43,8 +43,8 @@ LICENSES = [
 CATEGORIES = [
     {
         'id': 1,
-        'name': 'class1',
-        'supercategory': 'class1',
+        'name': 'placenta',
+        'supercategory': 'organ',
     },
 ]
 
@@ -118,7 +118,7 @@ def main():
 
             image_id = image_id + 1
 
-    with open('{}/instances_train2017.json'.format(ROOT_DIR), 'w') as output_json_file:
+    with open('{}/instances_train2017.json'.format(ROOT_DIR), 'w+') as output_json_file:
         json.dump(coco_output, output_json_file)
 
 

@@ -36,8 +36,8 @@ trainer = CustomTrainer(cfg)
 trainer.resume_or_load(resume=False)
 trainer.train()
 
-# evaluator = COCOEvaluator("placenta_test", cfg, False, output_dir="./output/")
-# val_loader = build_detection_test_loader(cfg, "placenta_test")
+# evaluator = COCOEvaluator("test", cfg, False, output_dir="./output/")
+# val_loader = build_detection_test_loader(cfg, "test")
 # print(inference_on_dataset(trainer.model, val_loader, evaluator))
 
 trainer.build_evaluator(cfg, "test")

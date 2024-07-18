@@ -126,7 +126,7 @@ def plot_loss():
         ax1.set_ylim(0,1)
         ax1.legend(['total loss', 'validation loss'])
         text_str = 'Min Val Loss: {:0.3f}'.format(np.min(val_loss)) + ' at {:d}'.format(val_iter[np.argmin(val_loss)])
-        ax1.text(val_iter[np.argmin(val_loss)], np.min(val_loss)*1.5, text_str)
+        ax1.text(1, np.min(val_loss)*1.5, text_str)
 
         plt.savefig('./save/loss.png')
         plt.show()
