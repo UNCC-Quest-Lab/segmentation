@@ -51,7 +51,7 @@ cfg.merge_from_file("./configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.y
 cfg.MODEL.DEVICE = 'cuda' # cpu
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1
 cfg.MODEL.WEIGHTS = "./output/model_final.pth"
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5   # set the testing threshold for this model
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.01   # set the testing threshold for this model
 predictor = DefaultPredictor(cfg)
 
 times = []
